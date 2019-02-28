@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zbf.mapper.TiKuMapper">
+
+    <!--新增题库-->
+    <insert id="toaddTiKuInfo" parameterType="map">
+        insert into lcg_tiku(id,tikuname,tikuzhuangtai,tikushuoming,createtime)
+        values(#{id},#{tikuname},#{tikuzhuangtai},#{tikushuoming},NOW())
+    </insert>
+
+
+    <!--查询题库表-->
+    <select id="getTikuList" parameterType="page" resultType="map">
+        select * from lcg_tiku
+    </select>
+
+</mapper>
